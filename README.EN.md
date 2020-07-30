@@ -6,7 +6,11 @@ This repository contains the source code files of the Python programs developed 
 
 ## Alura's Official Repository
 
-The official source codes for the course, developed by the instructor, are available in the [Github repository of this Alura course](https://github.com/alura-cursos/Curso-Python-3-parte-2-Avan-ando-na-linguagem).
+The official source codes for the course, developed by the instructor, are available in the Github repository of this Alura course:
+
+[Python 3 parte 1: Introdução à nova versão da linguagem](https://github.com/alura-cursos/Curso-Python-3-parte-1-Introdu-o-nova-vers-o-da-linguagem).
+
+[Python 3 parte 2: Avançando na linguagem](https://github.com/alura-cursos/Curso-Python-3-parte-2-Avan-ando-na-linguagem).
 
 ## Courses
 

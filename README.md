@@ -6,7 +6,11 @@ Este repositório contém os arquivos de código fonte dos programas em Python d
 
 ## Repositório Oficial da Alura
 
-Os códigos fontes oficiais do curso, desenvolvidos pelo instrutor, estão disponíveis no [repositório do Github deste curso da Alura](https://github.com/alura-cursos/Curso-Python-3-parte-2-Avan-ando-na-linguagem).
+Os códigos fontes oficiais do curso, desenvolvidos pelo instrutor, estão disponíveis no repositório do Github deste curso da Alura:
+
+[Python 3 parte 1: Introdução à nova versão da linguagem](https://github.com/alura-cursos/Curso-Python-3-parte-1-Introdu-o-nova-vers-o-da-linguagem).
+
+[Python 3 parte 2: Avançando na linguagem](https://github.com/alura-cursos/Curso-Python-3-parte-2-Avan-ando-na-linguagem).
 
 ## Cursos
 
