@@ -7,9 +7,9 @@ def imprimir_bem_vindo():
     print("*********************************")
 
 #Obtem a palavra secreta de forma aleatoria do arquivo
-def obter_palavra_secreta():
+def obter_palavra_secreta(nome_arquivo="palavras.txt", primeira_linha=0):
     # Lendo o arquivo de palavras
-    with open("palavras.txt", "r") as arquivo:
+    with open(nome_arquivo, "r") as arquivo:
         palavras = []
 
         #Lendo linha por linha
@@ -18,7 +18,7 @@ def obter_palavra_secreta():
             palavras.append(linha)
 
     #Escolhendo uma palavra aleatoriamente
-    numero = random.randrange(0, len(palavras))
+    numero = random.randrange(primeira_linha, len(palavras))
     palavra_secreta=palavras[numero]
 
     return palavra_secreta
@@ -51,6 +51,7 @@ def imprime_resultado(acertou, palavra_secreta):
     else:
         imprime_mensagem_perdedor(palavra_secreta)
 
+#Imprime a mensagem de perdedor com o desenho feito pelo instrutor Nico Steppat da Alura Cursos Online
 def imprime_mensagem_perdedor(palavra_secreta):
     print("Puxa, você foi enforcado!")
     print("A palavra era {}".format(palavra_secreta))
@@ -71,6 +72,7 @@ def imprime_mensagem_perdedor(palavra_secreta):
     print("     \_         _/         ")
     print("       \_______/           ")
 
+#Imprime a mensagem de vencedor com o desenho feito pelo instrutor Nico Steppat da Alura Cursos Online
 def imprime_mensagem_vencedor():
     print("Parabéns, você ganhou!")
     print("       ___________      ")
@@ -84,6 +86,7 @@ def imprime_mensagem_vencedor():
     print("         _.' '._        ")
     print("        '-------'       ")
 
+#Imprime o desenho da forca feito pelo instrutor Nico Steppat da Alura Cursos Online
 def desenha_forca(erros):
     print("  _______     ")
     print(" |/      |    ")
@@ -94,37 +97,37 @@ def desenha_forca(erros):
         print(" |            ")
         print(" |            ")
 
-    if(erros == 2):
+    elif(erros == 2):
         print(" |      (_)   ")
         print(" |      \     ")
         print(" |            ")
         print(" |            ")
 
-    if(erros == 3):
+    elif(erros == 3):
         print(" |      (_)   ")
         print(" |      \|    ")
         print(" |            ")
         print(" |            ")
 
-    if(erros == 4):
+    elif(erros == 4):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |            ")
         print(" |            ")
 
-    if(erros == 5):
+    elif(erros == 5):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |       |    ")
         print(" |            ")
 
-    if(erros == 6):
+    elif(erros == 6):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |       |    ")
         print(" |      /     ")
 
-    if (erros == 7):
+    elif(erros == 7):
         print(" |      (_)   ")
         print(" |      \|/   ")
         print(" |       |    ")
