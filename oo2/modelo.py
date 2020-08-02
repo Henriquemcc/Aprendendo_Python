@@ -33,8 +33,14 @@ class Filme(Programa):
         super().__init__(nome, ano)
         self.duracao = duracao
 
+    def imprime(self):
+        print("Nome: {} - Ano: {} - Duração: {} min - Likes: {} .".format(self._nome, self.ano, self.duracao, self._likes))
+
 class Serie(Programa):
     #Metodo construtor
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
+
+    def imprime(self):
+        print("Nome: {} - Ano: {} - Temporadas: {} - Likes: {} .".format(self._nome, self.ano, self.temporadas, self._likes))
