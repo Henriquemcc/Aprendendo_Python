@@ -24,6 +24,9 @@ class Programa:
     def dar_like(self):
         self._likes += 1
 
+    def imprime(self):
+        print("Nome: {} - Ano: {} - Likes: {} .".format(self._nome, self.ano, self._likes))
+
 class Filme(Programa):
     #Metodo construtor
     def __init__(self, nome, ano, duracao):

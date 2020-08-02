@@ -23,9 +23,4 @@ sherlock.dar_like()
 filmes_e_series = [duro_de_matar, sherlock]
 
 for programa in filmes_e_series:
-    if(hasattr(programa, 'duracao')):
-        detalhes = programa.duracao
-    else:
-        detalhes = programa.temporadas
-
-    print("Nome: {} - Ano: {} - D: {} - Likes: {}".format(programa.nome, programa.ano, detalhes, programa.likes))
+    programa.imprime()
