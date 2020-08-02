@@ -24,8 +24,8 @@ class Programa:
     def dar_like(self):
         self._likes += 1
 
-    def imprime(self):
-        print("Nome: {} - Ano: {} - Likes: {} .".format(self._nome, self.ano, self._likes))
+    def __str__(self):
+        return "Nome: {} - Ano: {} - Likes: {} .".format(self._nome, self.ano, self._likes)
 
 class Filme(Programa):
     #Metodo construtor
@@ -33,8 +33,8 @@ class Filme(Programa):
         super().__init__(nome, ano)
         self.duracao = duracao
 
-    def imprime(self):
-        print("Nome: {} - Ano: {} - Duração: {} min - Likes: {} .".format(self._nome, self.ano, self.duracao, self._likes))
+    def __str__(self):
+        return "Nome: {} - Ano: {} - Duração: {} min - Likes: {} .".format(self._nome, self.ano, self.duracao, self._likes)
 
 class Serie(Programa):
     #Metodo construtor
@@ -42,5 +42,5 @@ class Serie(Programa):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
-    def imprime(self):
-        print("Nome: {} - Ano: {} - Temporadas: {} - Likes: {} .".format(self._nome, self.ano, self.temporadas, self._likes))
+    def __str__(self):
+        return "Nome: {} - Ano: {} - Temporadas: {} - Likes: {} .".format(self._nome, self.ano, self.temporadas, self._likes)

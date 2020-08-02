@@ -23,4 +23,4 @@ sherlock.dar_like()
 filmes_e_series = [duro_de_matar, sherlock]
 
 for programa in filmes_e_series:
-    programa.imprime()
+    print(programa)
