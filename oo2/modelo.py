@@ -1,6 +1,6 @@
 class Programa:
     #Metodo construtor
-    def __init__(self, nome, ano, duracao):
+    def __init__(self, nome, ano):
         self._nome = nome.title()
         self.ano = ano
         self._likes = 0
