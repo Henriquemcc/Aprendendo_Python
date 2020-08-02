@@ -1,53 +1,37 @@
-class Filme:
+class Programa:
     #Metodo construtor
     def __init__(self, nome, ano, duracao):
-        self.__nome = nome.title()
+        self._nome = nome.title()
         self.ano = ano
-        self.duracao = duracao
-        self.__likes = 0
+        self._likes = 0
 
     #Permite obter o valor de nome fora da classe
     @property
     def nome(self):
-        return self.__nome
+        return self._nome
 
     #Permite alterar o valor de nome fora da classe
     @nome.setter
     def nome(self, nome):
-        self.__nome = nome.title()
+        self._nome = nome.title()
 
     #Permite obter o valor de likes fora da classe
     @property
     def likes(self):
-        return self.__likes
+        return self._likes
 
     #Incrementa mais um do valor de likes
     def dar_like(self):
-        self.__likes += 1
+        self._likes += 1
 
-class Serie:
+class Filme(Programa):
+    #Metodo construtor
+    def __init__(self, nome, ano, duracao):
+        super().__init__(nome, ano)
+        self.duracao = duracao
+
+class Serie(Programa):
     #Metodo construtor
     def __init__(self, nome, ano, temporadas):
-        self.__nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano)
         self.temporadas = temporadas
-        self.__likes = 0
-
-    #Permite obter o valor de nome fora da classe
-    @property
-    def nome(self):
-        return self.__nome
-
-    #Permite alterar o valor de nome fora da classe
-    @nome.setter
-    def nome(self, nome):
-        self.__nome = nome.title()
-
-    #Permite obter o valor de likes fora da classe
-    @property
-    def likes(self):
-        return self.__likes
-
-    #Incremente mais um do valor de likes
-    def dar_like(self):
-        self.__likes += 1
