@@ -10,7 +10,6 @@ duro_de_matar.dar_like()
 duro_de_matar.dar_like()
 duro_de_matar.dar_like()
 duro_de_matar.dar_like()
-print("Nome: {} - Ano: {} - Duração: {} - Likes: {}".format(duro_de_matar.nome, duro_de_matar.ano, duro_de_matar.duracao, duro_de_matar.likes))
 
 #Serie Sherlock
 sherlock = Serie("Sherlock", 2010, 4)
@@ -20,4 +19,13 @@ sherlock.dar_like()
 sherlock.dar_like()
 sherlock.dar_like()
 sherlock.dar_like()
-print("Nome: {} - Ano: {} - Temporadas: {} - Likes: {}".format(sherlock.nome, sherlock.ano, sherlock.temporadas, sherlock.likes))
+
+filmes_e_series = [duro_de_matar, sherlock]
+
+for programa in filmes_e_series:
+    if(hasattr(programa, 'duracao')):
+        detalhes = programa.duracao
+    else:
+        detalhes = programa.temporadas
+
+    print("Nome: {} - Ano: {} - D: {} - Likes: {}".format(programa.nome, programa.ano, detalhes, programa.likes))
