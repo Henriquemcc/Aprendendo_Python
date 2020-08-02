@@ -14,6 +14,8 @@ The official source codes for the course, developed by the instructor, are avail
 
 [Python 3: Introdução a Orientação a objetos](https://github.com/alura-cursos/Curso-Python-3-Introdu-o-a-Orienta-o-a-objetos/).
 
+
+
 ## Courses
 
 The courses in which these programs were developed were:
@@ -23,3 +25,5 @@ The courses in which these programs were developed were:
 [Python 3 parte 2: Avançando na linguagem](https://cursos.alura.com.br/course/python-3-avancando-na-linguagem).
 
 [Python 3: Introdução a Orientação a objetos](https://cursos.alura.com.br/course/python-3-intro-orientacao-objetos).
+
+[Python 3: Avançando na orientação a objetos](https://cursos.alura.com.br/course/python-3-avancando-orientacao-objetos).
