@@ -44,3 +44,14 @@ class Serie(Programa):
 
     def __str__(self):
         return "Nome: {} - Ano: {} - Temporadas: {} - Likes: {} .".format(self._nome, self.ano, self.temporadas, self._likes)
+
+class Playlist:
+    #Metodo construtor
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self.programas = programas
+
+    #Retorna o tamanho da playlist
+    def tamanho(self):
+        return len(self.programas)
+
