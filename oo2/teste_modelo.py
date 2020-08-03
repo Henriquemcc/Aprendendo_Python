@@ -33,11 +33,11 @@ filmes_e_series = [duro_de_matar, sherlock, tres_patetas, todo_mundo_em_panico, 
 playlist_fim_de_semana = Playlist("Playlist fim de semana", filmes_e_series)
 
 #Imprimindo o tamanho da playlist
-print("Tamanho da playlist: {}.".format(len(playlist_fim_de_semana)))
+print("Tamanho da playlist: {}.".format(playlist_fim_de_semana.tamanho))
 
 #Mostrando a playlist
-for programa in playlist_fim_de_semana:
+for programa in playlist_fim_de_semana.listagem:
     print(programa)
 
 #Verificando se o filme Duro de Matar esta contido na lista
-print("Duro de matar está nessa playlist? {}.".format(duro_de_matar in playlist_fim_de_semana))
+print("Duro de matar está nessa playlist? {}.".format(duro_de_matar in playlist_fim_de_semana.listagem))
