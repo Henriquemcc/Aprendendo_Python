@@ -26,9 +26,18 @@ star_wars_a_ameaca_fantasma = Filme("Star Wars: A Ameaça Fantasma", 1999, 136)
 #Filme Tron (1982)
 tron = Filme("Tron", 1982, 96)
 
+#Criando a lista de filmes e series
 filmes_e_series = [duro_de_matar, sherlock, tres_patetas, todo_mundo_em_panico, piratas_do_vale_do_silico, star_trek_original_series, star_wars_a_ameaca_fantasma, tron]
 
+#Criando uma playlist
 playlist_fim_de_semana = Playlist("Playlist fim de semana", filmes_e_series)
 
-for programa in playlist_fim_de_semana.programas:
+#Imprimindo o tamanho da playlist
+print("Tamanho da playlist: {}.".format(len(playlist_fim_de_semana)))
+
+#Mostrando a playlist
+for programa in playlist_fim_de_semana:
     print(programa)
+
+#Verificando se o filme Duro de Matar esta contido na lista
+print("Duro de matar está nessa playlist? {}.".format(duro_de_matar in playlist_fim_de_semana))
