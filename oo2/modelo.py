@@ -24,6 +24,7 @@ class Programa:
     def dar_like(self):
         self._likes += 1
 
+    #Converte as informacoes da classe para String
     def __str__(self):
         return "Nome: {} - Ano: {} - Likes: {} .".format(self._nome, self.ano, self._likes)
 
@@ -33,6 +34,7 @@ class Filme(Programa):
         super().__init__(nome, ano)
         self.duracao = duracao
 
+    #Converte as informacoes da classe para String
     def __str__(self):
         return "Nome: {} - Ano: {} - Duração: {} min - Likes: {} .".format(self._nome, self.ano, self.duracao, self._likes)
 
@@ -42,6 +44,7 @@ class Serie(Programa):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
+    #Converte as informacoes da classe para String
     def __str__(self):
         return "Nome: {} - Ano: {} - Temporadas: {} - Likes: {} .".format(self._nome, self.ano, self.temporadas, self._likes)
 
@@ -51,14 +54,16 @@ class Playlist:
         self.nome = nome
         self.__programas = programas
 
+    #Retorna a lista
     @property
     def listagem(self):
         return self.__programas
 
-    @property
-    def tamanho(self):
+    #Retorna o tamanho
+    def __len__(self):
         return len(self.__programas)
 
+    #Torna a classe iteravel
     def __getitem__(self, item):
         return self.__programas[item]
 

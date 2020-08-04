@@ -33,7 +33,7 @@ filmes_e_series = [duro_de_matar, sherlock, tres_patetas, todo_mundo_em_panico, 
 playlist_fim_de_semana = Playlist("Playlist fim de semana", filmes_e_series)
 
 #Imprimindo o tamanho da playlist
-print("Tamanho da playlist: {}.".format(playlist_fim_de_semana.tamanho))
+print("Tamanho da playlist: {}.".format(len(playlist_fim_de_semana)))
 
 #Mostrando a playlist
 for programa in playlist_fim_de_semana:
