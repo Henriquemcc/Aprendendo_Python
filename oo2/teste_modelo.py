@@ -40,4 +40,4 @@ for programa in playlist_fim_de_semana:
     print(programa)
 
 #Verificando se o filme Duro de Matar esta contido na lista
-print("Duro de matar está nessa playlist? {}.".format(duro_de_matar in playlist_fim_de_semana.listagem))
+print("Duro de matar está nessa playlist? {}.".format(duro_de_matar in playlist_fim_de_semana))
