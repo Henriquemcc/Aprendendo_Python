@@ -59,3 +59,6 @@ class Playlist:
     def tamanho(self):
         return len(self.__programas)
 
+    def __getitem__(self, item):
+        return self.__programas[item]
+

@@ -36,7 +36,7 @@ playlist_fim_de_semana = Playlist("Playlist fim de semana", filmes_e_series)
 print("Tamanho da playlist: {}.".format(playlist_fim_de_semana.tamanho))
 
 #Mostrando a playlist
-for programa in playlist_fim_de_semana.listagem:
+for programa in playlist_fim_de_semana:
     print(programa)
 
 #Verificando se o filme Duro de Matar esta contido na lista
