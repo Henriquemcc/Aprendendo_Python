@@ -14,7 +14,7 @@ The official source codes for the course, developed by the instructor, are avail
 
 [Python 3: Introdução a Orientação a objetos](https://github.com/alura-cursos/Curso-Python-3-Introdu-o-a-Orienta-o-a-objetos/).
 
-
+Python 3: Avançando na orientação a objetos (Repository is not available).
 
 ## Courses
 
