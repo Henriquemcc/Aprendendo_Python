@@ -16,7 +16,7 @@ Os códigos fontes oficiais do curso, desenvolvidos pelo instrutor, estão dispo
 
 Python 3: Avançando na orientação a objetos (Repositório não está disponível).
 
-
+Python: Manipulação de Strings (Repositório não está disponível).
 
 ## Cursos
 
