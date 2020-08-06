@@ -18,6 +18,8 @@ Python 3: Avançando na orientação a objetos (Repositório não está disponí
 
 Python: Manipulação de Strings (Repositório não está disponível).
 
+
+
 ## Cursos
 
 Os cursos em que estes programas foram feitos foram:
@@ -31,3 +33,5 @@ Os cursos em que estes programas foram feitos foram:
 [Python 3: Avançando na orientação a objetos](https://cursos.alura.com.br/course/python-3-avancando-orientacao-objetos).
 
 [Python: Manipulação de Strings](https://cursos.alura.com.br/course/python-manipulando-strings).
+
+[Python Collections parte 1: Listas e tuplas](https://cursos.alura.com.br/course/python-collections-listas-e-tuplas).
