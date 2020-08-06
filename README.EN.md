@@ -18,7 +18,7 @@ Python 3: Avançando na orientação a objetos (Repository is not available).
 
 Python: Manipulação de Strings (Repositório não está disponível).
 
-
+[Python Collections parte 1: Listas e tuplas](https://github.com/alura-cursos/python-introducao-a-collections/).
 
 ## Courses
 
