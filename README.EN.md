@@ -20,6 +20,8 @@ Python: Manipulação de Strings (Repository is not available).
 
 [Python Collections parte 1: Listas e tuplas](https://github.com/alura-cursos/python-introducao-a-collections/).
 
+[Python Collections parte 2: Conjuntos e dicionários](https://github.com/alura-cursos/python-introducao-a-collections2/).
+
 ## Courses
 
 The courses in which these programs were developed were:
