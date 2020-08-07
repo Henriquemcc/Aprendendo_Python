@@ -35,3 +35,5 @@ The courses in which these programs were developed were:
 [Python: Manipulação de Strings](https://cursos.alura.com.br/course/python-manipulando-strings).
 
 [Python Collections parte 1: Listas e tuplas](https://cursos.alura.com.br/course/python-collections-listas-e-tuplas).
+
+[Python Collections parte 2: Conjuntos e dicionários](https://cursos.alura.com.br/course/python-collections-conjuntos-e-dicionarios).
