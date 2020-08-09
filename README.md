@@ -22,6 +22,8 @@ Python: Manipulação de Strings (Repositório não está disponível).
 
 [Python Collections parte 2: Conjuntos e dicionários](https://github.com/alura-cursos/python-introducao-a-collections2/).
 
+Python Brasil: Validação de dados no padrão nacional (Repositório não está disponível).
+
 ## Cursos
 
 Os cursos em que estes programas foram feitos foram:
@@ -39,3 +41,5 @@ Os cursos em que estes programas foram feitos foram:
 [Python Collections parte 1: Listas e tuplas](https://cursos.alura.com.br/course/python-collections-listas-e-tuplas).
 
 [Python Collections parte 2: Conjuntos e dicionários](https://cursos.alura.com.br/course/python-collections-conjuntos-e-dicionarios).
+
+[Python Brasil: Validação de dados no padrão nacional](https://cursos.alura.com.br/course/python-validacao-dados).
