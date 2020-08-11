@@ -24,6 +24,8 @@ Python: Manipulação de Strings (Repository is not available).
 
 Python Brasil: Validação de dados no padrão nacional (Repository is not available).
 
+[Testes automatizados: TDD com Python](https://github.com/alura-cursos/testes-python/).
+
 ## Courses
 
 The courses in which these programs were developed were:
@@ -43,3 +45,5 @@ The courses in which these programs were developed were:
 [Python Collections parte 2: Conjuntos e dicionários](https://cursos.alura.com.br/course/python-collections-conjuntos-e-dicionarios).
 
 [Python Brasil: Validação de dados no padrão nacional](https://cursos.alura.com.br/course/python-validacao-dados).
+
+[Testes automatizados: TDD com Python](https://cursos.alura.com.br/course/tdd-com-python).
