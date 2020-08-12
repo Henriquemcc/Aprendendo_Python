@@ -56,7 +56,7 @@ class Avaliador:
         for lance in leilao.lances:
             if lance.valor > self.__maior_lance:
                 self.__maior_lance = lance.valor
-            elif lance.valor < self.__menor_lance:
+            if lance.valor < self.__menor_lance:
                 self.__menor_lance = lance.valor
     #Fim do metodo avalia
 
