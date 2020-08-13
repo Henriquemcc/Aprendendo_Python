@@ -1,5 +1,5 @@
 from unittest import TestCase
-from dominio import Usuario, Lance, Leilao, Avaliador
+from dominio import Usuario, Lance, Leilao
 import random
 import string
 
@@ -33,29 +33,22 @@ class TestAvaliador(TestCase):
         #Criando os lances
         self.cria_valores_lances(quantidade_de_lances)
 
-        #Criando o leilao
-        leilao = Leilao("Microondas")
-
         #Criando os lances e adicionando ao leilao
         indice = 0
         while indice < quantidade_de_lances:
             valor_lance = self.valor_lances[indice]
             usuario = self.usuarios[indice]
             lance = Lance(usuario, valor_lance)
-            leilao.propoe(lance)
+            self.leilao.propoe(lance)
             indice += 1
-
-        #Criando um avaliador
-        avaliador = Avaliador()
-        avaliador.avalia(leilao)
 
         #Calculando o menor e o maior valor esperado
         menor_valor_esperado = min(self.valor_lances)
         maior_valor_esperado = max(self.valor_lances)
 
         #Comparando o menor e maior valor esperado com os valores obtidos
-        self.assertEqual(menor_valor_esperado, avaliador.menor_lance)
-        self.assertEqual(maior_valor_esperado, avaliador.maior_lance)
+        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
+        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_x_lances_aleatorios_em_ordem_aleatoria_deve_retornar_o_maior_e_o_menor_valor_de_um_lance
 
     # Este metodo serve para testar a classe Avaliador passando a ela x lances aleatorios em ordem crescente e verificando o maior e o menor valor dos lances.
@@ -70,29 +63,22 @@ class TestAvaliador(TestCase):
         # Ordenando os valores dos lances
         self.valor_lances.sort()
 
-        # Criando o leilao
-        leilao = Leilao("Microondas")
-
         # Criando os lances e adicionando ao leilao
         indice = 0
         while indice < quantidade_de_lances:
             valor_lance = self.valor_lances[indice]
             usuario = self.usuarios[indice]
             lance = Lance(usuario, valor_lance)
-            leilao.propoe(lance)
+            self.leilao.propoe(lance)
             indice += 1
-
-        # Criando um avaliador
-        avaliador = Avaliador()
-        avaliador.avalia(leilao)
 
         # Calculando o menor e o maior valor esperado
         menor_valor_esperado = min(self.valor_lances)
         maior_valor_esperado = max(self.valor_lances)
 
         # Comparando o menor e maior valor esperado com os valores obtidos
-        self.assertEqual(menor_valor_esperado, avaliador.menor_lance)
-        self.assertEqual(maior_valor_esperado, avaliador.maior_lance)
+        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
+        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_x_lances_aleatorios_em_ordem_crescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance
 
     # Este metodo serve para testar a classe Avaliador passando a ela x lances aleatorios em ordem decrescente e verificando o maior e o menor valor dos lances.
@@ -116,20 +102,16 @@ class TestAvaliador(TestCase):
             valor_lance = self.valor_lances[indice]
             usuario = self.usuarios[indice]
             lance = Lance(usuario, valor_lance)
-            leilao.propoe(lance)
+            self.leilao.propoe(lance)
             indice += 1
-
-        # Criando um avaliador
-        avaliador = Avaliador()
-        avaliador.avalia(leilao)
 
         # Calculando o menor e o maior valor esperado
         menor_valor_esperado = min(self.valor_lances)
         maior_valor_esperado = max(self.valor_lances)
 
         # Comparando o menor e maior valor esperado com os valores obtidos
-        self.assertEqual(menor_valor_esperado, avaliador.menor_lance)
-        self.assertEqual(maior_valor_esperado, avaliador.maior_lance)
+        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
+        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_x_lances_aleatorios_em_ordem_decrescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance
 
     #Metodos que realizam testes nao aleatorios:
@@ -159,17 +141,13 @@ class TestAvaliador(TestCase):
         self.leilao.propoe(self.lance_do_fulano)
         self.leilao.propoe(lance_do_ciclano)
 
-        #Criando um avaliador
-        avaliador = Avaliador()
-        avaliador.avalia(self.leilao)
-
         #Definindo o menor e o maior valor esperado
         menor_valor_esperado = 500
         maior_valor_esperado = 1500
 
         #Comparando se os valores da instncia da classe Avaliador correspondem ao menor e o maior valor esperado
-        self.assertEqual(menor_valor_esperado, avaliador.menor_lance)
-        self.assertEqual(maior_valor_esperado, avaliador.maior_lance)
+        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
+        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_dois_lances_em_ordem_crescente_deve_retornar_o_maior_e_menor_valor_de_um_lance
 
     #Este metodo serve para testar a classe Avaliador passando a ela dois lances em ordem decrescente e verificando o maior e o menor valor dos lances
@@ -185,17 +163,13 @@ class TestAvaliador(TestCase):
         self.leilao.propoe(lance_do_ciclano)
         self.leilao.propoe(self.lance_do_fulano)
 
-        # Criando um avaliador
-        avaliador = Avaliador()
-        avaliador.avalia(self.leilao)
-
         # Definindo o menor e o maior valor esperado
         menor_valor_esperado = 500
         maior_valor_esperado = 1500
 
         # Comparando se os valores da instncia da classe Avaliador correspondem ao menor e o maior valor esperado
-        self.assertEqual(menor_valor_esperado, avaliador.menor_lance)
-        self.assertEqual(maior_valor_esperado, avaliador.maior_lance)
+        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
+        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     # Fim do metodo test_quando_passado_dois_lances_em_ordem_decrescente_deve_retornar_o_maior_e_menor_valor_de_um_lance
 
     #Este metodo serve para testar a classe Avaliador passando a ela apenas um lance e verificando o maior e o menor valor do lance
@@ -204,16 +178,12 @@ class TestAvaliador(TestCase):
         # Adicionando o lances do Ze
         self.leilao.propoe(self.lance_do_fulano)
 
-        # Criando um avaliador
-        avaliador = Avaliador()
-        avaliador.avalia(self.leilao)
-
         # Definindo o menor e o maior valor esperado
         valor_esperado = 500
 
         # Comparando se os valores da instncia da classe Avaliador correspondem ao menor e o maior valor esperado
-        self.assertEqual(valor_esperado, avaliador.menor_lance)
-        self.assertEqual(valor_esperado, avaliador.maior_lance)
+        self.assertEqual(valor_esperado, self.leilao.menor_lance)
+        self.assertEqual(valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_apenas_um_lance_no_leilao_deve_retornar_o_mesmo_valor_para_o_maior_e_o_menor_valor_de_um_lance
 
     #Este metodo serve para testar a classe Avaliador passando a ela tres lances e verificando o maior e o menor valor dos lances
@@ -231,16 +201,12 @@ class TestAvaliador(TestCase):
         self.leilao.propoe(self.lance_do_fulano)
         self.leilao.propoe(lance_do_ze)
 
-        # Criando um avaliador
-        avaliador = Avaliador()
-        avaliador.avalia(self.leilao)
-
         # Definindo o menor e o maior valor esperado
         menor_valor_esperado = 500
         maior_valor_esperado = 1500
 
         # Comparando se os valores da instncia da classe Avaliador correspondem ao menor e o maior valor esperado
-        self.assertEqual(menor_valor_esperado, avaliador.menor_lance)
-        self.assertEqual(maior_valor_esperado, avaliador.maior_lance)
+        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
+        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_tres_lances_deve_retornar_o_maior_e_menor_lance
 #Fim da classe TestAvaliador

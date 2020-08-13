@@ -33,6 +33,8 @@ class Leilao:
     def __init__(self, descricao:str):
         self.descricao = descricao
         self.__lances = []
+        self.__maior_lance = sys.float_info.min
+        self.__menor_lance = sys.float_info.max
     #Fim do metodo __init__
 
     #Este metodo serve para obter uma copia dos lances de uma instancia da classe Leilao
@@ -44,37 +46,23 @@ class Leilao:
     #Este metodo serve para adicionar um novo lance a instancia da classe Leilao
     #lance Instancia da classe Lance que sera adicionada ao leilao
     def propoe(self, lance:Lance):
+        if lance.valor > self.__maior_lance:
+            self.__maior_lance = lance.valor
+        if lance.valor < self.__menor_lance:
+            self.__menor_lance = lance.valor
         self.__lances.append(lance)
     #Fim do metodo propoe
-#Fim da classe Leilao
 
-#Esta classe representa o avaliador do leilao
-class Avaliador:
-    #Este metodo serve para construir uma instancia da classe Avaliador
-    def __init__(self):
-        self.__maior_lance = sys.float_info.min
-        self.__menor_lance = sys.float_info.max
-    #Fim do metodo __init__
-
-    #Este metodo serve para avaliar o leilao e calcular os lances minimo e o maximo.
-    #leilao Leilao que sera avaliado
-    def avalia(self, leilao: Leilao):
-        for lance in leilao.lances:
-            if lance.valor > self.__maior_lance:
-                self.__maior_lance = lance.valor
-            if lance.valor < self.__menor_lance:
-                self.__menor_lance = lance.valor
-    #Fim do metodo avalia
-
-    #Este metodo serve para obter o valor do maior lance de uma instancia da classe Avaliador
+    #Este metodo serve para obter o maior lance de uma instancia da classe Leilao
     @property
     def maior_lance(self):
         return self.__maior_lance
     #Fim do metodo maior_lance
 
-    #Este metodo serve para obter o valor do menor lance de uma instancia da classe Avaliador
+    #Este metodo serve para obter o menor lance de uma instancia da classe Leilao
     @property
     def menor_lance(self):
         return self.__menor_lance
     #Fim do metodo menor_lance
-#Fim da classe Avaliador
+
+#Fim da classe Leilao
