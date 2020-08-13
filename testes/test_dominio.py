@@ -42,7 +42,7 @@ class TestAvaliador(TestCase):
             valor_lance = self.valor_lances[indice]
             usuario = self.usuarios[indice]
             lance = Lance(usuario, valor_lance)
-            leilao.lances.append(lance)
+            leilao.propoe(lance)
             indice += 1
 
         #Criando um avaliador
@@ -79,7 +79,7 @@ class TestAvaliador(TestCase):
             valor_lance = self.valor_lances[indice]
             usuario = self.usuarios[indice]
             lance = Lance(usuario, valor_lance)
-            leilao.lances.append(lance)
+            leilao.propoe(lance)
             indice += 1
 
         # Criando um avaliador
@@ -116,7 +116,7 @@ class TestAvaliador(TestCase):
             valor_lance = self.valor_lances[indice]
             usuario = self.usuarios[indice]
             lance = Lance(usuario, valor_lance)
-            leilao.lances.append(lance)
+            leilao.propoe(lance)
             indice += 1
 
         # Criando um avaliador
@@ -156,8 +156,8 @@ class TestAvaliador(TestCase):
         lance_do_ciclano = Lance(ciclano, 1500)
 
         # Adicionando os lances de Fulano e Ciclano ao leilao
-        self.leilao.lances.append(self.lance_do_fulano)
-        self.leilao.lances.append(lance_do_ciclano)
+        self.leilao.propoe(self.lance_do_fulano)
+        self.leilao.propoe(lance_do_ciclano)
 
         #Criando um avaliador
         avaliador = Avaliador()
@@ -182,8 +182,8 @@ class TestAvaliador(TestCase):
         lance_do_ciclano = Lance(ciclano, 1500)
 
         # Adicionando os lances de Fulano e Ciclano ao leilao
-        self.leilao.lances.append(lance_do_ciclano)
-        self.leilao.lances.append(self.lance_do_fulano)
+        self.leilao.propoe(lance_do_ciclano)
+        self.leilao.propoe(self.lance_do_fulano)
 
         # Criando um avaliador
         avaliador = Avaliador()
@@ -202,7 +202,7 @@ class TestAvaliador(TestCase):
     def test_quando_passado_apenas_um_lance_no_leilao_deve_retornar_o_mesmo_valor_para_o_maior_e_o_menor_valor_de_um_lance(self):
 
         # Adicionando o lances do Ze
-        self.leilao.lances.append(self.lance_do_fulano)
+        self.leilao.propoe(self.lance_do_fulano)
 
         # Criando um avaliador
         avaliador = Avaliador()
@@ -227,9 +227,9 @@ class TestAvaliador(TestCase):
         lance_do_ze = Lance(ze, 1200)
 
         # Adicionando os lances de Fulano e Ciclano ao leilao
-        self.leilao.lances.append(lance_do_ciclano)
-        self.leilao.lances.append(self.lance_do_fulano)
-        self.leilao.lances.append(lance_do_ze)
+        self.leilao.propoe(lance_do_ciclano)
+        self.leilao.propoe(self.lance_do_fulano)
+        self.leilao.propoe(lance_do_ze)
 
         # Criando um avaliador
         avaliador = Avaliador()

@@ -35,11 +35,17 @@ class Leilao:
         self.__lances = []
     #Fim do metodo __init__
 
-    #Este metodo serve para obter os lances de uma instancia da classe Leilao
+    #Este metodo serve para obter uma copia dos lances de uma instancia da classe Leilao
     @property
     def lances(self):
-        return self.__lances
+        return self.__lances[:]
     #Fim do metodo lances
+
+    #Este metodo serve para adicionar um novo lance a instancia da classe Leilao
+    #lance Instancia da classe Lance que sera adicionada ao leilao
+    def propoe(self, lance:Lance):
+        self.__lances.append(lance)
+    #Fim do metodo propoe
 #Fim da classe Leilao
 
 #Esta classe representa o avaliador do leilao
