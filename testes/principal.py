@@ -1,4 +1,4 @@
-from dominio import Usuario, Lance, Leilao, Avaliador
+from dominio import Usuario, Lance, Leilao
 
 #Criando os usuarios Fulano e Ciclano
 fulano = Usuario("Fulano")
