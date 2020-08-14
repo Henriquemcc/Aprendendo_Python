@@ -133,15 +133,11 @@ class TestLeilao(TestCase):
         #Criando um outro lance para o usuario fulano
         lance_do_fulano_2000 = Lance(self.fulano, 2000)
 
+        with self.assertRaises(ValueError):
         #Adicionando os lances do fulano
-        self.leilao.propoe(self.lance_do_fulano)
-        self.leilao.propoe(lance_do_fulano_2000)
+            self.leilao.propoe(self.lance_do_fulano)
+            self.leilao.propoe(lance_do_fulano_2000)
 
-        #Calculando a quantidade de lances
-        quantidade_de_lances_recebido = len(self.leilao.lances)
-
-        #Comparando os valores
-        self.assertEqual(1, quantidade_de_lances_recebido)
     #Fim do metodo test_caso_o_usuario_seja_o_mesmo_nao_deve_permitir_propor_lance
 
 #Fim da classe TestAvaliador

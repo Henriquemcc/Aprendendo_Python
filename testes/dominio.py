@@ -46,6 +46,7 @@ class Leilao:
     #Este metodo serve para adicionar um novo lance a instancia da classe Leilao
     #lance Instancia da classe Lance que sera adicionada ao leilao
     def propoe(self, lance:Lance):
+
         #Verificando se o usuario que propos o lance eh diferente do usario do lance anterior
         if not self.__lances or self.__lances[-1].usuario != lance.usuario:
             if lance.valor > self.__maior_lance:
@@ -54,6 +55,9 @@ class Leilao:
                 self.__menor_lance = lance.valor
 
             self.__lances.append(lance)
+        else:
+            raise ValueError("O mesmo usuario não pode propor dois lances seguidos")
+
     #Fim do metodo propoe
 
     #Este metodo serve para obter o maior lance de uma instancia da classe Leilao
