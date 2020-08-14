@@ -1,7 +1,5 @@
 from unittest import TestCase
-from dominio import Usuario, Lance, Leilao
-import random
-import string
+from src.leilao.dominio import Usuario, Lance, Leilao
 
 #Esta classe serve para relizar os testes nos metodos da classe Leilao
 class TestLeilao(TestCase):
