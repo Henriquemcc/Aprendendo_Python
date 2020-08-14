@@ -1,26 +1,11 @@
 import sys
 
-#Esta classe representa o usuario que vai fazer lances no leilao
-class Usuario:
-    #Este metodo serve para construir uma instancia da classe Usuario
-    #nome Nome do usuario
-    def __init__(self, nome: str):
-        self.__nome = nome
-    #Fim do metodo __init__
-
-    #Este metodo serve para obter o nome de uma instancia da classe Usuario
-    @property
-    def nome(self):
-        return self.__nome
-    #Fim do metodo nome
-#Fim da classe Usuario
-
 #Esta classe representa o lance que o usuario vai fazer no leilao
 class Lance:
     #Este metodo serve para construir uma instancia da classe Lance
     #usuario Instancia da classe Usuario
     #valor Valor do lance
-    def __init__(self, usuario:Usuario, valor:float):
+    def __init__(self, usuario, valor:float):
         self.usuario = usuario
         self.valor = float(valor)
     #Fim do metodo __init__
@@ -81,3 +66,35 @@ class Leilao:
     #Fim do metodo menor_lance
 
 #Fim da classe Leilao
+
+#Esta classe representa o usuario que vai fazer lances no leilao
+class Usuario:
+    #Este metodo serve para construir uma instancia da classe Usuario
+    #nome Nome do usuario
+    def __init__(self, nome: str, carteira:float):
+        self.__nome = nome
+        self.__carteira = carteira
+    #Fim do metodo __init__
+
+    #Este metodo serve para obter o nome de uma instancia da classe Usuario
+    @property
+    def nome(self):
+        return self.__nome
+    #Fim do metodo nome
+
+    #Este metodo serve para obter o valor da carteira de uma instancia da classe Usuario
+    @property
+    def carteira(self):
+        return self.__carteira
+    #Fim do metodo carteira
+
+    #Este metodo serve para uma instancia da classe Usuario poder propor um lance.
+    def propoe_lance(self, leilao:Leilao, valor:float):
+        if valor > self.__carteira:
+            raise ValueError("O valor proposto eh maior que o valor da carteira.")
+        lance = Lance(self, valor)
+        leilao.propoe(lance)
+
+        self.__carteira -= valor
+
+#Fim da classe Usuario

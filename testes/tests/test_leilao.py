@@ -6,7 +6,7 @@ class TestLeilao(TestCase):
     #Este metodo serve para configurar o ambiente de teste
     def setUp(self):
         #Criando os usuarios Fulano, Ciclano e Ze
-        self.fulano = Usuario("Fulano")
+        self.fulano = Usuario("Fulano", 500.0)
 
         #Criando os lances de Fulano, Ciclano e Ze
         self.lance_do_fulano = Lance(self.fulano, 500)
@@ -19,7 +19,7 @@ class TestLeilao(TestCase):
     def test_quando_passado_dois_lances_em_ordem_crescente_deve_retornar_o_maior_e_menor_valor_de_um_lance(self):
 
         #Criando os usuarios ciclano
-        ciclano = Usuario("Ciclano")
+        ciclano = Usuario("Ciclano", 500.0)
 
         #Criando os lances do ciclano
         lance_do_ciclano = Lance(ciclano, 1500)
@@ -40,9 +40,10 @@ class TestLeilao(TestCase):
     #Este metodo serve para verificar se a classe leilao vai permitir passar a ela dois lances em ordem decrescente
     def test_nao_deve_permitir_propor_um_lance_em_ordem_decrescente(self):
 
+        #Verificando se a excecao, que deveria ocorrer, ocorre
         with(self.assertRaises(ValueError)):
             #Criando os usuarios ciclano
-            ciclano = Usuario("Ciclano")
+            ciclano = Usuario("Ciclano", 500.0)
 
             #Criando os lances do ciclano
             lance_do_ciclano = Lance(ciclano, 1500)
@@ -70,8 +71,8 @@ class TestLeilao(TestCase):
     #Este metodo serve para testar a classe leilao passando a ela tres lances e verificando o maior e o menor valor dos lances
     def test_quando_passado_tres_lances_deve_retornar_o_maior_e_menor_lance(self):
         #Criando os usuarios ciclano e ze
-        ciclano = Usuario("Ciclano")
-        ze = Usuario("Zé")
+        ciclano = Usuario("Ciclano", 500.0)
+        ze = Usuario("Zé", 500.0)
 
         #Criando os lances do ciclano e do ze
         lance_do_ciclano = Lance(ciclano, 1500)
@@ -106,7 +107,7 @@ class TestLeilao(TestCase):
     #Este metodo serve para testar o caso de uso: Caso o ultimo usuario seja diferente deve permitir propor um lance
     def test_caso_o_ultimo_usuario_seja_diferente_deve_permitir_propor_um_lance(self):
         #Criando o usuario ze e o lance dele
-        ze = Usuario("Zé")
+        ze = Usuario("Zé", 500.0)
         lance_do_ze = Lance(ze, 200)
 
         #Adicionando o lance do fulano e do ze
@@ -125,6 +126,7 @@ class TestLeilao(TestCase):
         #Criando um outro lance para o usuario fulano
         lance_do_fulano_2000 = Lance(self.fulano, 2000)
 
+        #Verificando se a excecao (que deveria ocorrer) ocorre
         with self.assertRaises(ValueError):
         #Adicionando os lances do fulano
             self.leilao.propoe(self.lance_do_fulano)

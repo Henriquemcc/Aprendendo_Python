@@ -10,7 +10,7 @@ class TestLeilaoAleatorio(TestCase):
     def cria_usuario(self, quantidade:int):
         self.usuarios = []
         for _ in range(quantidade):
-            self.usuarios.append(Usuario(''.join(random.choice(string.ascii_letters) for _ in range(2*quantidade))))
+            self.usuarios.append(Usuario(nome=''.join(random.choice(string.ascii_letters) for _ in range(2*quantidade)), carteira=500.0))
     #Fim do metodo cria_usuario
 
     #Este metodo serve para criar aleatoriamente valores para os lances
