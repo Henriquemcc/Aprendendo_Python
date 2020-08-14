@@ -47,16 +47,24 @@ class Leilao:
     #lance Instancia da classe Lance que sera adicionada ao leilao
     def propoe(self, lance:Lance):
 
-        #Verificando se o usuario que propos o lance eh diferente do usario do lance anterior
-        if not self.__lances or self.__lances[-1].usuario != lance.usuario:
+        #Verificando se o lance eh valido
+        if (not self.__lances) or (self.__lances[-1].usuario != lance.usuario) and (lance.valor > self.__lances[-1].valor):
+
+            #Calculando o maior e o menor lance
             if lance.valor > self.__maior_lance:
                 self.__maior_lance = lance.valor
             if lance.valor < self.__menor_lance:
                 self.__menor_lance = lance.valor
 
+            #Adicionando o lance
             self.__lances.append(lance)
-        else:
-            raise ValueError("O mesmo usuario não pode propor dois lances seguidos")
+
+        elif (self.__lances[-1].usuario == lance.usuario):
+            raise ValueError("Um usuário não pode propor dois lances seguidos.")
+
+        elif (lance.valor <= self.__lances[-1].valor):
+            raise ValueError("O lance deve ser maior que o lance anterior.")
+
 
     #Fim do metodo propoe
 

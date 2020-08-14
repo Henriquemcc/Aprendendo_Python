@@ -18,7 +18,11 @@ class TestLeilaoAleatorio(TestCase):
     def cria_valores_lances(self, quantidade:int):
         self.valor_lances = []
         for _ in range(quantidade):
-            self.valor_lances.append(random.randrange(0, 2*quantidade))
+            while(True):
+                lance = random.randrange(0, 2 * quantidade)
+                if (not lance in self.valor_lances):
+                    self.valor_lances.append(lance)
+                    break
     #Fim do metodo cria_valores_lances
 
     #Este metodo serve para criar os lances aleatoriamente
@@ -42,22 +46,7 @@ class TestLeilaoAleatorio(TestCase):
             indice += 1
     #Fim do metodo cria_lances_e_adiciona_ao_leilao
 
-    #Este metodo serve para testar a classe Avaliador passando a ela x lances aleatorios em ordem aleatoria e verificando o maior e o menor valor dos lances.
-    #quantidade_de_lances Quantidade de lances aleatorios que serao inseridos no leilao.
-    def test_quando_passado_x_lances_aleatorios_em_ordem_aleatoria_deve_retornar_o_maior_e_o_menor_valor_de_um_lance(self, quantidade_de_lances=999):
-        #Criando os lances
-        self.cria_lances_e_adiciona_ao_leilao(quantidade_de_lances)
-
-        #Calculando o menor e o maior valor esperado
-        menor_valor_esperado = min(self.valor_lances)
-        maior_valor_esperado = max(self.valor_lances)
-
-        #Comparando o menor e maior valor esperado com os valores obtidos
-        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
-        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
-    #Fim do metodo test_quando_passado_x_lances_aleatorios_em_ordem_aleatoria_deve_retornar_o_maior_e_o_menor_valor_de_um_lance
-
-    # Este metodo serve para testar a classe Avaliador passando a ela x lances aleatorios em ordem crescente e verificando o maior e o menor valor dos lances.
+    # Este metodo serve para testar a classe Leilao passando a ela x lances aleatorios em ordem crescente e verificando o maior e o menor valor dos lances.
     # quantidade_de_lances Quantidade de lances aleatorios que serao inseridos no leilao.
     def test_quando_passado_x_lances_aleatorios_em_ordem_crescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance(self, quantidade_de_lances=999):
         #Criando os lances
@@ -72,19 +61,13 @@ class TestLeilaoAleatorio(TestCase):
         self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_x_lances_aleatorios_em_ordem_crescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance
 
-    # Este metodo serve para testar a classe Avaliador passando a ela x lances aleatorios em ordem decrescente e verificando o maior e o menor valor dos lances.
+    # Este metodo serve para testar a classe Leilao passando a ela x lances aleatorios em ordem decrescente e verificando o maior e o menor valor dos lances.
     # quantidade_de_lances Quantidade de lances aleatorios que serao inseridos no leilao.
     def test_quando_passado_x_lances_aleatorios_em_ordem_decrescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance(self, quantidade_de_lances=999):
         #Criando os lances
-        self.cria_lances_e_adiciona_ao_leilao(quantidade=quantidade_de_lances, ordenar=True, inverter=True)
+        with(self.assertRaises(ValueError)):
+            self.cria_lances_e_adiciona_ao_leilao(quantidade=quantidade_de_lances, ordenar=True, inverter=True)
 
-        # Calculando o menor e o maior valor esperado
-        menor_valor_esperado = min(self.valor_lances)
-        maior_valor_esperado = max(self.valor_lances)
-
-        # Comparando o menor e maior valor esperado com os valores obtidos
-        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
-        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_x_lances_aleatorios_em_ordem_decrescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance
 
     #Este metodo serve para configurar o ambiente de teste

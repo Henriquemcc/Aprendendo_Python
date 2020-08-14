@@ -39,27 +39,21 @@ class TestLeilao(TestCase):
         self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_dois_lances_em_ordem_crescente_deve_retornar_o_maior_e_menor_valor_de_um_lance
 
-    #Este metodo serve para testar a classe Avaliador passando a ela dois lances em ordem decrescente e verificando o maior e o menor valor dos lances
-    def test_quando_passado_dois_lances_em_ordem_decrescente_deve_retornar_o_maior_e_menor_valor_de_um_lance(self):
+    #Este metodo serve para verificar se a classe leilao vai permitir passar a ela dois lances em ordem decrescente
+    def test_nao_deve_permitir_propor_um_lance_em_ordem_decrescente(self):
 
-        #Criando os usuarios ciclano
-        ciclano = Usuario("Ciclano")
+        with(self.assertRaises(ValueError)):
+            #Criando os usuarios ciclano
+            ciclano = Usuario("Ciclano")
 
-        #Criando os lances do ciclano
-        lance_do_ciclano = Lance(ciclano, 1500)
+            #Criando os lances do ciclano
+            lance_do_ciclano = Lance(ciclano, 1500)
 
-        #Adicionando os lances de Fulano e Ciclano ao leilao
-        self.leilao.propoe(lance_do_ciclano)
-        self.leilao.propoe(self.lance_do_fulano)
+            #Adicionando os lances de Fulano e Ciclano ao leilao
+            self.leilao.propoe(lance_do_ciclano)
+            self.leilao.propoe(self.lance_do_fulano)
 
-        #Definindo o menor e o maior valor esperado
-        menor_valor_esperado = 500
-        maior_valor_esperado = 1500
-
-        #Comparando os valores
-        self.assertEqual(menor_valor_esperado, self.leilao.menor_lance)
-        self.assertEqual(maior_valor_esperado, self.leilao.maior_lance)
-    #Fim do metodo test_quando_passado_dois_lances_em_ordem_decrescente_deve_retornar_o_maior_e_menor_valor_de_um_lance
+    #Fim do metodo test_nao_deve_permitir_propor_um_lance_em_ordem_decrescente
 
     #Este metodo serve para testar a classe Avaliador passando a ela apenas um lance e verificando o maior e o menor valor do lance
     def test_quando_passado_apenas_um_lance_no_leilao_deve_retornar_o_mesmo_valor_para_o_maior_e_o_menor_valor_de_um_lance(self):
@@ -75,7 +69,7 @@ class TestLeilao(TestCase):
         self.assertEqual(valor_esperado, self.leilao.maior_lance)
     #Fim do metodo test_quando_passado_apenas_um_lance_no_leilao_deve_retornar_o_mesmo_valor_para_o_maior_e_o_menor_valor_de_um_lance
 
-    #Este metodo serve para testar a classe Avaliador passando a ela tres lances e verificando o maior e o menor valor dos lances
+    #Este metodo serve para testar a classe leilao passando a ela tres lances e verificando o maior e o menor valor dos lances
     def test_quando_passado_tres_lances_deve_retornar_o_maior_e_menor_lance(self):
         #Criando os usuarios ciclano e ze
         ciclano = Usuario("Ciclano")
@@ -86,9 +80,9 @@ class TestLeilao(TestCase):
         lance_do_ze = Lance(ze, 1200)
 
         #Adicionando os lances de Fulano e Ciclano ao leilao
-        self.leilao.propoe(lance_do_ciclano)
         self.leilao.propoe(self.lance_do_fulano)
         self.leilao.propoe(lance_do_ze)
+        self.leilao.propoe(lance_do_ciclano)
 
         #Definindo o menor e o maior valor esperado
         menor_valor_esperado = 500
@@ -118,8 +112,8 @@ class TestLeilao(TestCase):
         lance_do_ze = Lance(ze, 200)
 
         #Adicionando o lance do fulano e do ze
-        self.leilao.propoe(self.lance_do_fulano)
         self.leilao.propoe(lance_do_ze)
+        self.leilao.propoe(self.lance_do_fulano)
 
         #Calculando a quantidade de lances
         quantidade_de_lances = len(self.leilao.lances)
