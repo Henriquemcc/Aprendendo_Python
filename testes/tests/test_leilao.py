@@ -1,5 +1,8 @@
 from unittest import TestCase
-from src.leilao.dominio import Usuario, Lance, Leilao
+from src.leilao.usuario import Usuario
+from src.leilao.lance import Lance
+from src.leilao.leilao import Leilao
+from src.leilao.excecoes import LanceInvalido
 
 #Esta classe serve para relizar os testes nos metodos da classe Leilao
 class TestLeilao(TestCase):
@@ -41,7 +44,7 @@ class TestLeilao(TestCase):
     def test_nao_deve_permitir_propor_um_lance_em_ordem_decrescente(self):
 
         #Verificando se a excecao, que deveria ocorrer, ocorre
-        with(self.assertRaises(ValueError)):
+        with(self.assertRaises(LanceInvalido)):
             #Criando os usuarios ciclano
             ciclano = Usuario("Ciclano", 500.0)
 
@@ -127,7 +130,7 @@ class TestLeilao(TestCase):
         lance_do_fulano_2000 = Lance(self.fulano, 2000)
 
         #Verificando se a excecao (que deveria ocorrer) ocorre
-        with self.assertRaises(ValueError):
+        with self.assertRaises(LanceInvalido):
         #Adicionando os lances do fulano
             self.leilao.propoe(self.lance_do_fulano)
             self.leilao.propoe(lance_do_fulano_2000)

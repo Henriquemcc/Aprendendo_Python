@@ -1,5 +1,8 @@
 from unittest import TestCase
-from src.leilao.dominio import Usuario, Lance, Leilao
+from src.leilao.usuario import Usuario
+from src.leilao.lance import Lance
+from src.leilao.leilao import Leilao
+from src.leilao.excecoes import LanceInvalido
 import random
 import string
 
@@ -65,7 +68,7 @@ class TestLeilaoAleatorio(TestCase):
     # quantidade_de_lances Quantidade de lances aleatorios que serao inseridos no leilao.
     def test_quando_passado_x_lances_aleatorios_em_ordem_decrescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance(self, quantidade_de_lances=999):
         #Criando os lances
-        with(self.assertRaises(ValueError)):
+        with(self.assertRaises(LanceInvalido)):
             self.cria_lances_e_adiciona_ao_leilao(quantidade=quantidade_de_lances, ordenar=True, inverter=True)
 
     #Fim do metodo test_quando_passado_x_lances_aleatorios_em_ordem_decrescente_deve_retornar_o_maior_e_o_menor_valor_de_um_lance
