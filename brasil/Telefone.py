@@ -37,7 +37,7 @@ class Telefone:
         ddd = elementos.group(2)
         numero = elementos.group(3)+elementos.group(4)
 
-        if ddi == None:
+        if ddi is None:
             ddi = "55"
 
         return ddi, ddd, numero
