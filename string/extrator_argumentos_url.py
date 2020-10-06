@@ -12,9 +12,13 @@ class ExtratorArgumentosUrl:
     def __len__(self):
         return len(self.url)
 
-    #Metodo que compara dos objetos desta mesma classe
+    #Metodo que compara dois objetos desta mesma classe para ver se sao iguais
     def __eq__(self, other):
         return self.url == other.url
+
+    #Metodo que compara dois objetos desta mesma classe para ver se sao diferentes
+    def __ne__(self, other):
+        return not self.__eq__(other)
 
     #Retorna o valor da variavel url
     @property
