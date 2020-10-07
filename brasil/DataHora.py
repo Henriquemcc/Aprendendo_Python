@@ -4,7 +4,7 @@ class DataHora:
     #Este metodo constroi uma instancia desta classe
     #data_e_hora Data e hora no formato datetime da data e hora que deseja armazenar nessa classe
     def __init__(self, data_e_hora=None):
-        if data_e_hora == None:
+        if data_e_hora is None:
             data_e_hora = datetime.now()
         self.data_e_hora = data_e_hora
     #Fim do metodo __init__
