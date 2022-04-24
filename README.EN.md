@@ -1,7 +1,6 @@
 [Versão em Português](README.md)
 
 # Learning how to program in Python 3
-[![deepcode](https://www.deepcode.ai/api/gh/badge?key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwbGF0Zm9ybTEiOiJnaCIsIm93bmVyMSI6IkhlbnJpcXVlbWNjIiwicmVwbzEiOiJBcHJlbmRlbmRvX1B5dGhvbiIsImluY2x1ZGVMaW50IjpmYWxzZSwiYXV0aG9ySWQiOjIzNTQyLCJpYXQiOjE2MDIxMDc5MTl9.KQR7tJQcMcwAy17JmEuVgoBHWk0jFKSKCUdhq6k9p7Y)](https://www.deepcode.ai/app/gh/Henriquemcc/Aprendendo_Python/_/dashboard?utm_content=gh%2FHenriquemcc%2FAprendendo_Python)
 
 This repository contains the source code files of the Python programs developed during the Python 3 online course held on the [Alura Cursos Online](https://alura.com.br/) platform.
 
